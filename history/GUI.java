@@ -1,3 +1,4 @@
+package history;
 import javax.swing.*;
 
 public class GUI {
