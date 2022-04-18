@@ -46,9 +46,9 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        // primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        // primaryStage.setMaximized(true);
+        primaryStage.setTitle("Java Integrated IDE");
+        primaryStage.setScene(new Scene(root, 1600, 1000));
+        primaryStage.setMaximized(true);
         primaryStage.show();
         /*
          * // TextField tf1=new TextField();
@@ -232,8 +232,8 @@ public class Main extends Application {
     // @Override
     // public void handle(KeyEvent key) {
     // // TODO Auto-generated method stub
-    //
-    // area.setText("");
+    
+    //     area.setText("");
     // }
     //
     // });

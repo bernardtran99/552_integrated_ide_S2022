@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<GridPane fx:controller="GUI" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+      <Text fx:id="numberDisplayText" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="3" />
+      <Text fx:id="operatorText" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <Button id="btn1" text="1" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="2" GridPane.rowIndex="3">
+            <Button id="btn2" text="2" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Button id="btn3" text="3" />
+      </HBox>
+
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <Button id="btn4" text="4" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="2" GridPane.rowIndex="2">
+            <Button id="btn5" text="5" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="3" GridPane.rowIndex="2">
+            <Button id="btn6" text="6" />
+      </HBox>
+
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <Button id="btn7" text="7" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="2" GridPane.rowIndex="1">
+            <Button id="btn8" text="8" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <Button id="btn9" text="9" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="2" GridPane.rowIndex="4">
+            <Button id="btn0" text="0" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Button id="btnC" text="C" />
+      </HBox>
+
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="4" GridPane.rowIndex="1">
+            <Button id="btnAdd" text="+" />
+      </HBox>
+
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="4" GridPane.rowIndex="2">
+            <Button id="btnMinus" text="-" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="4" GridPane.rowIndex="3">
+            <Button id="btnTimes" text="*" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="4" GridPane.rowIndex="4">
+            <Button id="btnDivide" text="/" />
+      </HBox>
+      <HBox spacing="10" alignment="bottom_right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button id="btnEquals" text="=" />
+      </HBox>
+</GridPane>

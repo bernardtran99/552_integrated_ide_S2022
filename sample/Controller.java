@@ -22,7 +22,7 @@ public class Controller extends Main {
     @FXML
     public TextArea textedit;
 
-    @FXML
+    // @FXML
 
     // public void Run(ActionEvent actionEvent) {
     // Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -267,7 +267,7 @@ public class Controller extends Main {
 
     public void printLines(String cmd, InputStream ins) {
         String line;
-        System.out.println("hello");
+        //System.out.println("hello");
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(ins));
         while (true) {
@@ -284,7 +284,7 @@ public class Controller extends Main {
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            System.out.println("hello1");
+            System.out.println("------------");
             // System.out.println(cmd + " " + line);
 
         }
