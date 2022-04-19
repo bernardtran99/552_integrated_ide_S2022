@@ -138,7 +138,7 @@ public class GUI extends Application {
     @FXML
     public void compile(ActionEvent actionEvent) {
         System.out.println(filename);
-        String command = "javac  " + filename;
+        String command = "javac " + filename;
         System.out.println(command);
         Process pro = null;
 
