@@ -2,5 +2,5 @@
 Integraded IDE project for 552 Spring 2022<br>
 To run:<br>
 cd project<br>
-mvn clean
+mvn clean<br>
 mvn clean javafx:run<br>
