@@ -184,6 +184,11 @@ public class GUI extends Application {
         }
     }
 
+    @FXML
+    public void createRepo(ActionEvent actionEvent) {
+        
+    }
+
     public void printLines(String cmd, InputStream ins) {
         String line;
         BufferedReader in = new BufferedReader(new InputStreamReader(ins));
