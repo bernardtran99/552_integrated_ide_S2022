@@ -12,8 +12,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.FileChooser;
 
 import java.io.IOException;
-import java.util.Objects;
-
 import java.io.*;
 import java.lang.*;
 import java.util.*;
@@ -21,7 +19,11 @@ import java.nio.file.Files;
 import java.util.stream.Stream;
 
 import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.api.Status;
 import org.eclipse.jgit.api.errors.GitAPIException;
+import org.eclipse.jgit.lib.Constants;
+import org.eclipse.jgit.lib.ObjectId;
+import org.eclipse.jgit.lib.Ref;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -35,6 +37,10 @@ public class GUI extends Application {
     public TextArea output;
     @FXML
     public TextArea textedit;
+
+    public static void main(String[] args) {
+        launch();
+    }
     
     @Override
     public void start(Stage stage) throws IOException {
@@ -42,7 +48,7 @@ public class GUI extends Application {
 
         Scene scene = new Scene(root, 300, 275);
 
-        stage.setTitle("FXML Calculator");
+        stage.setTitle("Java Integrated Development Environment");
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();
@@ -140,11 +146,11 @@ public class GUI extends Application {
             pro = Runtime.getRuntime().exec(command);
             printLines(command + " stdout:", pro.getInputStream());
             printLines(command + " stderr:", pro.getErrorStream());
-            output.appendText("\n");
+            //output.appendText("\n");
             pro.waitFor();
-            String line2 = command + " exitValue() " + pro.exitValue();
+            String line2 = command + " exitValue() " + pro.exitValue() + "\n";
             output.appendText(line2);
-            System.out.println(command + " exitValue() " + pro.exitValue());
+            System.out.println(command + " exitValue() " + pro.exitValue() + "\n");
         } catch (IOException | InterruptedException ioException) {
             ioException.printStackTrace();
         }
@@ -168,7 +174,7 @@ public class GUI extends Application {
             pro = Runtime.getRuntime().exec(command);
             printLines(command + " stdout:", pro.getInputStream());
             printLines(command + " stderr:", pro.getErrorStream());
-            output.appendText("\n");
+            //output.appendText("\n");
             pro.waitFor();
             String line2 = command + " exitValue() " + pro.exitValue() + "\n";
             output.appendText(line2);
@@ -188,17 +194,11 @@ public class GUI extends Application {
                 if (line == null) {
                     break;
                 }
-                output.appendText(cmd + " " + line);
-                output.appendText("\n");
+                output.appendText(cmd + " " + line + "\n");
 
             } catch (IOException ioException) {
                 ioException.printStackTrace();
             }
-            System.out.println("------------");
         }
-    }
-
-    public static void main(String[] args) {
-        launch();
     }
 }
