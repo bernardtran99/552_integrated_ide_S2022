@@ -478,6 +478,10 @@ public class GUI extends Application {
         // }
     }
 
+    public void printStatus() {
+        
+    }
+
     public void printLines(String cmd, InputStream ins) {
         String line;
         BufferedReader in = new BufferedReader(new InputStreamReader(ins));
