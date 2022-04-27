@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<SplitPane dividerPositions="0.5" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI">
+      <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600" prefWidth="800">
+                  <children>
+                        <MenuBar layoutX="1.0" layoutY="2.0">
+                              <menus>
+                                    <Menu mnemonicParsing="false" text="File">
+                                          <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#openAction" text="Open" />
+                                                <MenuItem mnemonicParsing="false" onAction="#saveAs" text="Save As" />
+                                                <MenuItem mnemonicParsing="false" onAction="#save" text="Save" />
+                                          </items>
+                                    </Menu>
+                                    <Menu mnemonicParsing="false" onAction="#format" text="Edit">
+                                          <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#format" text="Format" />
+                                          </items>
+                                    </Menu>
+                                    <Menu mnemonicParsing="false" text="Help">
+                                          <items>
+                                                <MenuItem mnemonicParsing="false" text="About" />
+                                          </items>
+                                    </Menu>
+                              </menus>
+                        </MenuBar>
+                        <Button layoutX="25.0" layoutY="650" mnemonicParsing="false" onAction="#compile" text="Compile" />
+                        <Button layoutX="125.0" layoutY="650" mnemonicParsing="false" onAction="#run" text="Run" />
+                        <TextArea fx:id="textedit" layoutY="25.0" prefHeight="600" prefWidth="800" />
+                  </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600" prefWidth="800">
+                  <children>
+                        <TextArea fx:id="output" layoutY="25.0" prefHeight="600" prefWidth="800" />
+                  </children>
+            </AnchorPane>
+      </items>
+</SplitPane>

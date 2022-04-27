@@ -1,14 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
 
-<SplitPane dividerPositions="0.5" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="GUI">
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800" prefWidth="800" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI">
       <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600" prefWidth="800">
                   <children>
-                        <MenuBar layoutX="1.0" layoutY="2.0">
+                        <TextArea fx:id="textedit" layoutX="32.0" layoutY="24.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#enter" onKeyTyped="#save2" prefHeight="800" prefWidth="800" />
+                        <VBox layoutY="25.0" prefHeight="800" prefWidth="36.0">
+                              <children>
+                                    <ScrollPane fx:id="scroll" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="654.0" prefWidth="36.0">
+                                          <content>
+                                                <Text fx:id="numberText" strokeType="OUTSIDE" strokeWidth="0.0" text="1" wrappingWidth="20.0">
+                                                      <font>
+                                                            <Font size="13.0" />
+                                                      </font>
+                                                </Text>
+                                          </content>
+
+                                    </ScrollPane>
+                              </children>
+                        </VBox>
+                        <MenuBar layoutX="39.0" layoutY="-1.0" prefHeight="11.0" prefWidth="199.0">
                               <menus>
                                     <Menu mnemonicParsing="false" text="File">
                                           <items>
@@ -19,7 +45,7 @@
                                     </Menu>
                                     <Menu mnemonicParsing="false" text="Edit">
                                           <items>
-                                                <MenuItem mnemonicParsing="false" text="Delete" />
+                                                <MenuItem mnemonicParsing="false" onAction="#format" text="Format" />
                                           </items>
                                     </Menu>
                                     <Menu mnemonicParsing="false" text="Help">
@@ -27,16 +53,40 @@
                                                 <MenuItem mnemonicParsing="false" text="About" />
                                           </items>
                                     </Menu>
+                                    <Menu mnemonicParsing="false" text="Git">
+                                          <items>
+                                                <MenuItem mnemonicParsing="false" onAction="#clone" text="Clone" />
+                                                <MenuItem mnemonicParsing="false" onAction="#add" text="Add" />
+                                                <MenuItem mnemonicParsing="false" onAction="#commit" text="Commit" />
+                                                <MenuItem mnemonicParsing="false" onAction="#push" text="Push" />
+                                                <MenuItem mnemonicParsing="false" onAction="#configure" text="Configure" />
+                                          </items>
+                                    </Menu>
                               </menus>
                         </MenuBar>
-                        <Button layoutX="25.0" layoutY="650" mnemonicParsing="false" onAction="#compile" text="Compile" />
-                        <Button layoutX="125.0" layoutY="650" mnemonicParsing="false" onAction="#run" text="Run" />
-                        <TextArea fx:id="textedit" layoutY="25.0" prefHeight="600" prefWidth="800"/>
+                        <Button layoutX="25" layoutY="850" mnemonicParsing="false" onAction="#compile" text="Compile" />
+                        <Button layoutX="125" layoutY="850" mnemonicParsing="false" onAction="#run" text="Run" />
                   </children>
             </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600" prefWidth="800">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800" prefWidth="800">
                   <children>
-                        <TextArea fx:id="output" layoutY="25.0" prefHeight="600" prefWidth="800" />
+                        <TextArea fx:id="output" layoutX="-7.0" layoutY="24.0" prefHeight="400" prefWidth="800" />
+                        <!-- <TextArea fx:id="gitText" layoutX="-7.0" layoutY="424" prefHeight="400" prefWidth="800" /> -->
+                        <!-- <TextField id="FirstName" fx:id="firstName" layoutX="115.0" layoutY="28.0" />
+                        <TextField id="LastName"  fx:id="lastName" layoutX="115.0" layoutY="78.0" />
+                        <Button layoutX="47.0" layoutY="180.0" mnemonicParsing="false" onAction="#createPersonAction" prefHeight="37.0" prefWidth="79.0" text="Create" />
+                        <Text layoutX="29.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" wrappingWidth="69.677734375" />
+                        <Text layoutX="29.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" wrappingWidth="69.677734375" /> -->
+                        <TextField id="WorkingDirectory" fx:id="workingDirectory" layoutX="150" layoutY="450" prefWidth="400"/>
+                        <Text layoutX="25" layoutY="470" strokeType="OUTSIDE" strokeWidth="0.0" text="Working Directory:" />
+                        <TextField id="ClonePath" fx:id="clonePath" layoutX="150" layoutY="500" prefWidth="400"/>
+                        <Text layoutX="25" layoutY="520" strokeType="OUTSIDE" strokeWidth="0.0" text="Repo URL:" />
+                        <TextField id="AddFile" fx:id="addFile" layoutX="150" layoutY="550" prefWidth="400"/>
+                        <Text layoutX="25" layoutY="570" strokeType="OUTSIDE" strokeWidth="0.0" text="File to be Added:" />
+                        <TextField id="CommitMessage" fx:id="commitMessage" layoutX="150" layoutY="600" prefWidth="400"/>
+                        <Text layoutX="25" layoutY="620" strokeType="OUTSIDE" strokeWidth="0.0" text="Commit Message:" />
+                        <TextField id="GitToken" fx:id="gitToken" layoutX="150" layoutY="650" prefWidth="400"/>
+                        <Text layoutX="25" layoutY="670" strokeType="OUTSIDE" strokeWidth="0.0" text="Git Token:" />
                   </children>
             </AnchorPane>
       </items>
