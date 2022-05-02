@@ -449,11 +449,6 @@ public class GUI extends Application {
         // System.out.println(gt);
 
         Path localPath = Paths.get(wd);
-        // String[] sarray = cp.split("://",2);
-        // System.out.println(sarray[0]);
-        // System.out.println(sarray[1]);
-        // String completePushStr = sarray[0] + "://" + gt + "@" + sarray[1];
-        // System.out.println(completePushStr);
         try {
             Git git = Git.open(localPath.toFile());
             CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider(gt, "");
@@ -462,20 +457,6 @@ public class GUI extends Application {
         } catch (GitAPIException | IOException e) {
 
         }
-        // File repoPath = gitConfigFile;
-        // //String remoteUrl = "https://<GITHUB_ACCESS_TOKEN>@github.com/<GITHUB_USERNAME>/<REPOSITORY_NAME>.git";
-        // String remoteUrl = "https://${token}@github.com/user/repo.git";
-        // try {
-        //     git = Git.init().setDirectory(repoPath).call();
-        //     CredentialsProvider credentialsProvider = new UsernamePasswordCredentialsProvider("${token}", "");
-        //     git.push().setRemote(remoteUrl).setCredentialsProvider(credentialsProvider).call();
-        //     // PushCommand pushCommand = git.push();
-        //     // pushCommand.add("master");
-        //     // pushCommand.setRemote("origin");
-        //     // pushCommand.call();
-        // } catch(GitAPIException e) {
-            
-        // }
     }
 
     public void printStatus() {
